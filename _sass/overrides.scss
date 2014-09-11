@@ -206,6 +206,7 @@ a.logo-link {
 		position: absolute;
 		top: $line-height-computed * 4;
 		left: 50px;
+		z-index: 100;
 
 		.share-icons {
 			&> iframe,
