@@ -20,12 +20,32 @@ module.exports = function (grunt) {
 					]
 				}
 			}
-		}
+		},
+		compass: {
+			dist: {
+				options: {
+					sassDir: '_sass',
+					cssDir: 'assets/stylesheets',
+					specify: '_sass/main.scss',
+					environment: 'production',
+					outputStyle: 'compressed'
+				}
+			},
+			dev: {
+				options: {
+					sassDir: '_sass',
+					cssDir: 'assets/stylesheets',
+					specify: '_sass/main.scss',
+				}
+			}
+		},
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-compass');
 
 	grunt.registerTask('default', [
-		'uglify:dist'
+		'uglify:dist',
+		'compass:dist'
 	]);
 };
