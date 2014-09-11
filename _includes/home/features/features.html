@@ -1,0 +1,6 @@
+<section class="feature-section" id="features">
+	{% for feature in site.features %}
+		{% capture evenOdd %}{% cycle 'odd', 'even' %}{% endcapture %}
+		{% include home/features/feature.html evenOdd=evenOdd %}
+	{% endfor %}
+</section>

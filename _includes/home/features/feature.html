@@ -1,0 +1,48 @@
+<div class="feature {{ include.evenOdd }}">
+	<div class="container">
+		<div class="row">
+			{% if include.evenOdd == 'even' %}
+				<div class="col-md-5 col-md-push-7">
+			{% else %}
+				<div class="col-md-5">
+			{% endif %}
+				<div class="hidden-xs hidden-sm">
+					{% capture imageUrl %}assets/images/{{ feature.image }}{% endcapture %}
+					{% if feature.dynamicImage %}
+						<canvas class="feature-image {{ feature.dynamicImage }}"></canvas>
+						<noscript>
+							<img class="img-responsive" alt="{{ feature.title }}" src="{{ imageUrl | prepend: site.baseurl }}" alt="{{ feature.title }}" />
+						</noscript>
+					{% elsif feature.dynamicInclude %}
+						{% include home/features/{{ feature.dynamicInclude }} %}
+					{% else %}
+						<img class="img-responsive{% if feature.imageClass %} {{ feature.imageClass }}{% endif %}" alt="{{ feature.title }}" src="{{ imageUrl | prepend: site.baseurl }}" alt="{{ feature.title }}" />
+					{% endif %}
+				</div>
+			</div>
+
+			{% if include.evenOdd == 'even' %}
+				<div class="hidden-xs hidden-md hidden-lg col-sm-3 col-sm-push-9">
+			{% else %}
+				<div class="hidden-xs hidden-md hidden-lg col-sm-3">
+			{% endif %}
+				{% if feature.smallImage %}
+					{% capture smallImageUrl %}assets/images/{{ feature.smallImage }}{% endcapture %}
+					<img src="{{ smallImageUrl }}" alt="{{ feature.title }}" class="img-responsive small-image{% if feature.smallClassName %} {{ feature.smallClassName }}{% endif %}" />
+				{% endif %}
+			</div>
+
+			{% if include.evenOdd == 'even' %}
+				<div class="content col-sm-9 col-md-7 col-sm-pull-3 col-md-pull-5">
+			{% else %}
+				<div class="content col-sm-9 col-md-7">
+			{% endif %}
+				<h2>
+					{{ feature.title }} {% if feature.subtitle %}<span class="text-muted">{{ feature.subtitle }}</span>{% endif %}
+				</h2>
+				
+				{{ feature.content }}
+			</div>
+		</div>
+	</div>
+</div>

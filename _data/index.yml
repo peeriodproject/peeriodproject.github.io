@@ -1,0 +1,9 @@
+title: "Share files with everyone – anonymously."
+content: "Peeriod lets you search, provide and download content without servers, trackers, nor revealing your identity."
+button:
+  download:
+    label: Download Peeriod Alpha
+    href: "#download"
+  readMore:
+    label: Give me the tour
+    href: "#features"

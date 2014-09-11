@@ -1,0 +1,38 @@
+# Site settings
+title: Peeriod
+subtitle: Bleeding Edge File Sharing
+email: info@peeriodproject.org
+description: "Peeriod is an open source project which makes privacy protected peer-to-peer file sharing available to the masses."
+baseurl: /
+url: https://peeriodproject.github.io
+homeTooltipLabel: "Go home Peeriod, you're drunk."
+
+# https://github.com/sunlightlabs/congress/commit/6426761a671d46df6fc5d2526bdaf506c39d789c
+enforce_ssl: peeriodproject.github.io
+
+collections:
+  - features
+  - developers
+  - downloads
+
+footerPages:
+  - contact.md
+  - resources.md
+  - donate.md
+
+piwikUrl: https://ssl.webpack.de/tracker.peeriodproject.org
+piwikSiteId: 1
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+exclude:
+ - bower_components
+ - bower.json
+ - Gruntfile.js
+ - node_modules
+ - package.json
+
+sass:
+  style: compressed

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+	{% include head/head.html %}
+
+	<body class="is-home">
+		<div id="fb-root"></div>
+	{% comment %}
+		{% include header.html %}
+	{% endcomment %}
+
+	<div class="container">
+		{% assign index = site.data.index %}
+		{% assign downloadButton = index.button.download %}
+		{% assign readMoreButton = index.button.readMore %}
+
+		{% if index %}
+		<div class="row main-section">
+			
+			<div class="hidden-xs share-icons-wrapper">
+			{% include share/share.html %}
+			</div>
+
+			<div class="vertical-wrapper">
+				<div class="vertical-wrapper-inner">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+						<a href="{{ site.baseurl }}" class="logo-link">
+							<img src="{{ 'assets/images/icon-shadow-192.png' | prepend: site.baseurl }}" alt="{{ site.title }} – {{ site.subtitle }}" class="logo" />
+						</a>
+						<h1>
+							{{ index.title }}
+						</h1>
+						<div class="row">
+							<div class="col-xs-12 col-sm-10 col-md-10 col-lg-8 col-sm-offset-1 col-md-offset-1 col-lg-offset-2">
+								<p class="text-center lead">
+									{{ index.content | remove: '<p>' | remove: '</p>' }}
+								</p>
+								<p class="text-center"> 
+									<a href="{{ downloadButton.href }}" class="btn btn-lg btn-primary hidden-xs hidden-sm" role="button" id="main-download-button">{{ downloadButton.label }}</a>
+									<small class="available-for hidden-xs hidden-sm">{{ site.data.download.availableFor }}</small>
+									<a href="{{ readMoreButton.href }}" class="btn btn-lg btn-primary hidden-md hidden-lg" role="button">{{ readMoreButton.label }}</a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		{% endif %}
+	</div>
+	
+	{% include home/features/features.html %}
+	{% include home/developers/developers.html %}
+	{% include home/download/download.html %}
+	{% include home/newsletter/newsletter.html %}
+
+	{% include footer.html %}
+
+	</body>
+</html>

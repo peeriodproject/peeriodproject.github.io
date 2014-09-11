@@ -1,0 +1,26 @@
+<section class="developers-section" id="developers">
+	<div class="container">
+		{% assign sectionHeader = site.developers | where:'relative_path', '_developers/main.md' | first %}
+
+		{% if sectionHeader %}
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 col-lg-offset-1">
+					<div class="page-header text-center">
+						<h2>
+							 {{ sectionHeader.title }}
+						</h2>
+						<p class="text-center _lead">{{ sectionHeader.content | | remove: '<p>' | remove: '</p>' }}</p>
+					</div>
+				</div>
+			</div>
+		{% endif %}
+
+		<div class="row">
+			{% for developer in site.developers %}
+				{% if developer.relative_path != '_developers/main.md' %}
+					{% include home/developers/developer.html %}
+				{% endif %}
+			{% endfor %}
+		</div>
+	</div>
+</section>

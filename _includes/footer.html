@@ -1,0 +1,53 @@
+<footer class="footer-section">
+		<p class="text-center col-xs-11 col-sm-12 col-sm-offset-0">
+			{% assign seperator = '<span class="seperator">&middot;</span>' %}
+			2014 {{ seperator }} <a href="{{ site.url }}">{{ site.title }}</a> {{ seperator }} 
+			
+			{% for page in site.pages %}
+				{% if site.footerPages contains page.name %}
+					<a href="{{ page.url }}" rel="contact">{{ page.title }}</a> {{ seperator }} 
+				{% endif %}
+			{% endfor %}
+			
+			{% for thirdparty in site.data.thirdparty %}
+				<a href="{{ thirdparty[1].href }}" rel="external">{{ thirdparty[1].label }}</a>{% if forloop.last != true%} {{ seperator }} {% endif %}
+			{% endfor %}
+		</p>
+		<a href="#top" class="back-to-top"></a>
+</footer>
+
+<script type="text/javascript" src="{{ "assets/javascripts/dist.min.js" | prepend: site.baseurl }}"></script>
+
+
+{% comment %} ------------- Statistics  ------------ {% endcomment %}
+<script type="text/javascript">
+    var _paq = _paq || [];
+    (function(){ var u="{{ site.piwikUrl }}/";
+    _paq.push(['setSiteId', {{ site.piwikSiteId }}]);
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript'; g.defer=true; g.async=true; g.src=u+'piwik.js';
+    s.parentNode.insertBefore(g,s); })();
+</script>
+<noscript><p><img src="{{ site.piwikUrl }}/piwik.php?idsite={{ site.piwikSiteId }}" style="border:0;" alt="" /></p></noscript>
+
+{% comment %} ------------- Sharing  --------------- {% endcomment %}
+
+<script>(function(d, s, id) {
+	var js, fjs = d.getElementsByTagName(s)[0];
+	if (d.getElementById(id)) { return; }
+	js = d.createElement(s); js.id = id;
+	js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+	fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>

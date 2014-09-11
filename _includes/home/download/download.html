@@ -1,0 +1,41 @@
+<section class="download-section" id="download">
+	<div class="container download">
+		{% assign download = site.downloads | where:'relative_path', '_downloads/main.md' | first %}
+		{% assign data = site.data.download %}
+
+		{% if download %}
+		<div class="row">
+			<div class="vertical-wrapper">
+				<div class="vertical-wrapper-inner">
+					
+					<div class="text-center">
+						{% comment %}
+							<h2 class="text-center">
+								{{ download.title }}
+								
+								{% if site.data.download.version %}
+									<span class="version">{{ site.data.download.version }}</span>
+								{% endif %}
+							</h2>
+							{{ download.content }}
+						{% endcomment %}
+						
+						{% if download.button %}
+						<p class="text-center">
+							<a class="btn btn-xl btn-lg btn-primary" id="download-button" href="{{ site.data.download.href }}" title="{{ download.button.label }}">
+								{{ download.button.label }}
+							</a>
+							<small class="available-for">
+								{{ data.versionLabel }} {{ data.version }} {{ data.availableFor | replace_first:'For','for' }}
+							</small>
+						</p>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+		</div>
+		{% endif %}
+	</div>
+
+	{% include home/download/download-started.html %}
+</section>

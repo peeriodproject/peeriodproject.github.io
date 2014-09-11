@@ -1,0 +1,40 @@
+<head prefix="og: http://ogp.me/ns#">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	
+	<title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }} – {{ site.subtitle }}</title>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	{% if page.metaDescription %}
+		<meta name="description" content="{{ page.metaDescription }}">
+	{% else %}
+		<meta name="description" content="{{ site.description }}">
+	{% endif %}
+
+	{% include head/favicons.html %}
+
+	{% include head/opengraph-twitter.html %}
+	{% include head/opengraph.html %}
+
+	{% if site.enforce_ssl %}
+		{% comment %}
+		redirect users to the https version of the website.
+		but: only check when on the production domain, as set in _config.yml.
+		{% endcomment %}
+		<script type="text/javascript">
+			var enforce = "{{ site.enforce_ssl }}";
+			if ((enforce == window.location.host) && (window.location.protocol != "https:"))
+			window.location = window.location.toString().replace(/^http:/, "https:");
+		</script>
+	{% endif %}
+
+	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+	<link rel="stylesheet" href="{{ "assets/stylesheets/main.css" | prepend: site.baseurl }}">
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>

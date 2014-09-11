@@ -1,0 +1,30 @@
+<section class="download-started-section" id="download-started">
+	<div class="container">
+		{% assign success = site.downloads | where:'relative_path', '_downloads/started.md' | first %}
+
+		{% if success %}
+		<div class="row">
+			<div class="vertical-wrapper">
+				<div class="vertical-wrapper-inner">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<h2 class="text-center">
+							{{ success.title }}
+						</h2>
+					</div>
+					<div class="col-xs-10 col-sm-8 col-md-6 col-lg-6 col-xs-offset-1 col-sm-offset-2 col-md-offset-3 col-lg-offset-3 text-left">
+						{{ success.content }}
+
+						<div class="text-center">
+							{% for page in site.pages %}
+								{% if page.name == 'contact.md' %}
+									<a href="{{ page.url }}" class="btn btn-primary" rel="contact">{{ success.linkToContactLabel }}</a>
+								{% endif %}
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		{% endif %}
+	</div>
+</section>

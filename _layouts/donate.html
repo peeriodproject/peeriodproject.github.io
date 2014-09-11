@@ -1,0 +1,90 @@
+---
+layout: default
+---
+
+<div class="page col-xs-12 col-sm-12 col-md-8 col-lg-6 col-md-offset-2 col-lg-offset-3">
+	<header class="_page-header">
+		<h1>{{ page.title }}</h1>
+	</header>
+
+	<article class="page-content">
+		{{ content }}
+
+		<h2>PayPal</h2>
+		{{ page.paypalTitle }}
+		<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="paypal">
+			<input type="hidden" name="cmd" value="_s-xclick">
+			<input type="hidden" name="hosted_button_id" value="AMRNUATUFWJF2">
+			<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+			<img alt="" border="0" src="https://www.paypalobjects.com/de_DE/i/scr/pixel.gif" width="1" height="1">
+		</form>
+
+		<hr />
+
+		<h2>BitCoin</h2>
+
+		{{ page.bitcoinTitle }}
+
+		<form class="bitpay-donate form-horizontal" action="https://bitpay.com/checkout" method="post" role="form">
+			<input name="action" type="hidden" value="checkout">
+			<div class="form-group">
+				<label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+				<div class="col-sm-10">
+					<input class="bitpay-donate-field-email form-control" name="orderID" type="email" placeholder="Email address (optional)" maxlength="50" autocapitalize="off" autocorrect="off">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="inputPassword3" class="col-sm-2 control-label">Amount</label>
+				<div class="col-sm-10 col-md-5">
+					<input class="bitpay-donate-field-price form-control" name="price" type="number" value="10.00" placeholder="Amount" maxlength="10" min="0.01" step="0.01"/>
+				</div>
+				<div class="col-sm-10 col-sm-offset-2 col-md-5 col-md-offset-0">
+					<select class="bitpay-donate-field-currency form-control" name="currency" value="">
+						<option selected="selected" value="USD">USD</option>
+						<option value="BTC">BTC</option>
+						<option value="EUR">EUR</option>
+						<option value="GBP">GBP</option>
+						<option value="AUD">AUD</option>
+						<option value="BGN">BGN</option>
+						<option value="BRL">BRL</option>
+						<option value="CAD">CAD</option>
+						<option value="CHF">CHF</option>
+						<option value="CNY">CNY</option>
+						<option value="CZK">CZK</option>
+						<option value="DKK">DKK</option>
+						<option value="HKD">HKD</option>
+						<option value="HRK">HRK</option>
+						<option value="HUF">HUF</option>
+						<option value="IDR">IDR</option>
+						<option value="ILS">ILS</option>
+						<option value="INR">INR</option>
+						<option value="JPY">JPY</option>
+						<option value="KRW">KRW</option>
+						<option value="LTL">LTL</option>
+						<option value="LVL">LVL</option>
+						<option value="MXN">MXN</option>
+						<option value="MYR">MYR</option>
+						<option value="NOK">NOK</option>
+						<option value="NZD">NZD</option>
+						<option value="PHP">PHP</option>
+						<option value="PLN">PLN</option>
+						<option value="RON">RON</option>
+						<option value="RUB">RUB</option>
+						<option value="SEK">SEK</option>
+						<option value="SGD">SGD</option>
+						<option value="THB">THB</option>
+						<option value="TRY">TRY</option>
+						<option value="ZAR">ZAR</option>
+					</select>
+				</div>
+			</div>
+			<input type="hidden" name="data" value="wxbzis7hvncx+895M4bPvKi2/VeAGj9jb1XWWJ11hXu5sPa6iQ5hENetJRIMQZIsMmNDZ7Seyz3eKIIkz4NgD2cHfguKig289iPaw51pbnmifAEoWB5SZdxmIuSK8/rdOlVmDHsSFhxxNjtr1JTxWIYGcIZUycHShdPyNwoCAmARdtM3EafQhktUgrMNNIlGbyaqYmu58EID+Whm4yqoIHmocvhyTli7+TV3Td8IHig=">
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<input class="bitpay-donate-button" name="submit" src="https://bitpay.com/img/donate-button.svg" onerror="this.onerror=null; this.src='https://bitpay.com/img/donate-button-md.png'" width="126" height="48" type="image" alt="BitPay, the easy way to pay with bitcoins." border="0">
+				</div>
+			</div>
+		</form>
+	</article>
+</div>

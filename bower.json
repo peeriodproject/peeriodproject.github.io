@@ -1,0 +1,30 @@
+{
+  "name": "peeriodproject.github.io",
+  "version": "0.0.1",
+  "homepage": "https://peeriodproject.org/",
+  "authors": [
+    "Jonathan Pirnay <mail@johnnycrab.com>",
+    "Jörn Röder <kontakt@joernroeder.de>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass-official": "v3.2.0+2",
+    "ajaxchimp": "~1.3.0",
+    "modernizer": "~2.8.2",
+    "retina.js": "~1.3.0",
+    "jquery.scrollTo": "~1.4.13",
+    "jquery.localScroll": "~1.3.5",
+    "springy": "~2.6.1",
+    "jquery-waypoints": "~2.0.5"
+  },
+  "devDependencies": {
+    "bourbon": "~4.0.2"
+  }
+}

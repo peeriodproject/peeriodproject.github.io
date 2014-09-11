@@ -1,0 +1,81 @@
+$body-bg: #f0f0f0;
+$text-color: #6B6B6B;
+$dark-color: #3C3C3C;
+$brand-primary: #00D97E;
+
+$success-color: $brand-primary;
+$error-color: #FF0045;
+
+$border-radius-base: 3px;
+
+$font-size-base: 16px;
+$font-size-large: 1.125;
+$font-size-h1: floor(($font-size-base * 3.4375)); 	// ~55
+$font-size-h2: floor(($font-size-base * 2.625));	// ~42
+$font-size-h3: ceil(($font-size-base * 2));			// ~32
+$font-size-h4: ceil(($font-size-base * 1.4375));	// ~23
+$font-size-h5: $font-size-base;
+$font-size-h4: $font-size-base;
+
+$line-height-base: 1.4;
+
+$font-family-sans-serif: "GandhiSans";
+
+$headings-font-weight: bold;
+$headings-line-height: 1.25;
+$headings-color: $dark-color;
+
+// popover
+$popover-arrow-width: 6px;
+$popover-max-width: 500px;
+$popover-bg: #f0f0f0;
+$popover-arrow-color: $popover-bg;
+$popover-border-color: transparent;
+$popover-arrow-outer-color: transparent;
+$popover-arrow-outer-fallback-color: $popover-bg;
+$popover-fallback-border-color: $popover-arrow-outer-fallback-color;
+
+// tooltip
+$tooltip-bg: $dark-color;
+$tooltip-color: $body-bg;
+$tooltip-opacity: 1;
+$tooltip-max-width: 300px;
+//$tooltip-arrow-width: 3px;
+
+// button
+$btn-primary-color: $dark-color;
+$btn-primary-bg: transparent;
+$btn-primary-border: $brand-primary;
+
+
+// --- custom variables -------------------------
+
+// main
+$main-availableFor-color: #A4A4A4;
+
+// developers
+$developers-background-color: $dark-color;
+$developers-color: #a4a4a4;
+$developers-headings-color: #F0F0F0;
+
+// download
+$download-background-color: $brand-primary;
+$download-color: #0F5430;
+$download-link-color: #002B19;
+$download-version-color: #C2F4DF;
+$download-availableFor-color: #009556;
+$download-headings-color: #05321D;
+$download-started-headings-color: #F0F0F0;
+
+// newsletter
+$newsletter-input-background-color: #6B6B6B;
+$newsletter-input-placeholder-color: #D2D2D2;
+$newsletter-button-background-color: $error-color; //#F0F0F0;
+$newsletter-button-color: #fff; // $dark-color;
+
+// footer
+// $footer-height: uses $line-height-computed. @see overrides.scss#1
+$footer-background-color: $dark-color;
+$footer-color: #a4a4a4;
+$footer-link-color: #F0F0F0;
+$footer-border-color:  #6B6B6B;

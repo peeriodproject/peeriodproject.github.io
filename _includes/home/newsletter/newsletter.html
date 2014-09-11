@@ -1,0 +1,24 @@
+<section class="newsletter-section" id="newsletter">
+	<div class="container">
+		{% assign newsletter = site.data.newsletter %}
+
+		{% if newsletter %}
+
+		<img src="{{ 'assets/images/icon-sw-128.png' | prepend: site.baseurl }}" alt="{{ site.title }} – {{ site.subtitle }}" class="logo" />
+		
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 margin-top-100 text-center">
+				<h2 class="text-center">
+					{{ newsletter.title }}
+				</h2>
+				
+				{{ newsletter.content }}
+				
+				{% include home/newsletter/newsletter-form-mailchimp.html %}
+			</div>
+		</div>
+		{% endif %}
+
+		{% include share/share-bottom.html %}
+	</div>
+</section>
